@@ -9,7 +9,7 @@
 }
 .moneyImg {
     /*transform: rotate(180deg);*/
-    height: 60%;
+    height: 50%;
     border: 0px;
 
 }
@@ -19,16 +19,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    width: 802px;
-    height: 1003px;
+    /*position: absolute;*/
+    width: 602px;
+    height: 802px;
     border: 1px solid black;
     background-image: url(AmusedDecentLhasaapso-size_restricted.gif);
     background-size: cover;
 }
 .startGame {
-    width: 450px;
-    height: 100px;
+    width: 400px;
+    height: 80px;
+}
+
+.startGame:hover {
+    background-color: black;
+    color: white;
 }
 canvas {
     border: 1px solid red;
