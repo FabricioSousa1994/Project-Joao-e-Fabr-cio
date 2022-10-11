@@ -1,4 +1,6 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
 
 * {
     padding: 0;
@@ -14,22 +16,35 @@
 
 }
 
+
 .menu {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    width: 802px;
-    height: 1003px;
+    /*position: absolute;*/
+    width: 602px;
+    height: 802px;
     border: 1px solid black;
     background-image: url(AmusedDecentLhasaapso-size_restricted.gif);
     background-size: cover;
 }
-.startGame {
+
+#tittle {
+    font-size: 50px;
+}
+
+#startGame {
     width: 450px;
     height: 100px;
 }
+#startGame:hover {
+    background-color: black;
+    color: white;
+}
+
 canvas {
     border: 1px solid red;
+
 }
+
