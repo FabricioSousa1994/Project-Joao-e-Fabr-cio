@@ -11,11 +11,15 @@
 }
 .moneyImg {
     /*transform: rotate(180deg);*/
-    height: 60%;
+    height: 50%;
     border: 0px;
-
 }
 
+#tittle {
+    color: rgb(255, 255, 255);
+    text-shadow: 5px 8px rgb(0, 0, 0);
+    font-weight: 900;
+}
 
 .menu {
     display: flex;
@@ -35,15 +39,38 @@
 }
 
 #startGame {
+    background-color: rgb(255, 255, 255);
     width: 450px;
-    height: 100px;
+    height: 80px;
+    border: 0px;
+    box-shadow: 5px 8px black;
 }
 #startGame:hover {
     background-color: black;
     color: white;
+    box-shadow: 5px 8px white;
+    cursor: pointer;
+
+}
+
+#audioDiv {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-right: 10px;
+    padding-bottom: 180px;
+}
+
+#onOff {
+    background-color: transparent;
+    border: 0px;
+}
+
+#muteLogo {
+    height: 20px;
+    background-color: transparent;
 }
 
 canvas {
     border: 1px solid red;
-
 }
