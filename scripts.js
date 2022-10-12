@@ -102,4 +102,4 @@ function startGame() {
 function updateGameArea() {
     gameArea.clear();
     zePovinho.draw();
-  }
+}
