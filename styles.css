@@ -30,7 +30,7 @@
     width: 602px;
     height: 802px;
     border: 1px solid black;
-    background-image: url(AmusedDecentLhasaapso-size_restricted.gif);
+    background-image: url(images/AmusedDecentLhasaapso-size_restricted.gif);
     background-size: cover;
 }
 
@@ -74,4 +74,7 @@
 
 canvas {
     border: 1px solid red;
+    background-image: url(images/ps_project_bg.png);
+    background-position: 50px;
+    background-size: cover;
 }

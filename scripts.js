@@ -82,16 +82,16 @@ class Char {
 
 document.addEventListener("keydown", (event) => {
   switch (event.key) {
-    case "ArrowLeft":
+    case "a":
       zePovinho.moveLeft();
     break;
-    case "ArrowRight":
+    case "d":
       zePovinho.moveRight();
     break;
-    case "ArrowDown":
+    case "s":
       zePovinho.moveDown();
     break;
-    case "ArrowUp":
+    case "w":
       zePovinho.moveUp();
     break;
   }
@@ -101,7 +101,7 @@ document.addEventListener("keydown", (event) => {
 
 let image = new Image();
 window.onload = () => {
-  image.src = "/char.png";
+  image.src = "images/char.png";
   document.getElementById("startGame").onclick = () => {
     startGame();
   };
