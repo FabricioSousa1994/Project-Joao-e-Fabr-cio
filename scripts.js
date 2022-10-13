@@ -109,31 +109,19 @@ window.onload = () => {
   };
 };
 
-
-const zePovinho = new Char(230, 690, image, context);
-function startGame() {
-  zePovinho.draw();
-  gameArea.start();
-}
-
-function updateGameArea() {
-  gameArea.clear();
-  zePovinho.draw();
-}
-
 class Car {
-  constructor(x, y, width, height, src) {
+  constructor(x, y, width, height) {
       this.x = x;
       this.y = y;
       this.width = width;
       this.height = height;
       this.image = new Image();
-      this.src = src
   }
 
   draw() {
-    this.image.src = this.src
-      context.drawImage(this.image, this.x, this.y, 50, 50);
+    this.image.src = './images/cars/blackcarPNG.png'
+
+      context.drawImage(this.image, this.x, this.y, this.width, this.height);
   }
 
     left() {
@@ -145,14 +133,22 @@ class Car {
     }
 }
 
-let carImage = new Image()
-window.onload = () => {
-carImage.src = "";
-document.getElementById('start-button').onclick = () => {
-  startGame();
 
+const zePovinho = new Char(230, 690, image, context);
+let car = new Car(100, 100, 100, 100)
 
-};
+function startGame() {
+  zePovinho.draw();
 }
-carImage
-const car1 = new Car(50, 50, 50, 50, )
+gameArea.start();
+
+function updateGameArea() {
+  gameArea.clear();
+  zePovinho.draw();
+  car.draw()
+
+}
+
+
+
+
