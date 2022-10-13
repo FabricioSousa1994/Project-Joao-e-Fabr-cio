@@ -5,18 +5,16 @@ const audio = document.querySelector("audio");
 audio.play();
 
 let audioIsPlaying = true;
-
-
-
+const obstacles = [];
 
 function isAudioPlaying() {
-    if (audioIsPlaying === true) {
-        audio.pause();
-        audioIsPlaying = false;
-    } else {
-        audio.play();
-        audioIsPlaying = true;
-    }
+  if (audioIsPlaying === true) {
+    audio.pause();
+    audioIsPlaying = false;
+  } else {
+    audio.play();
+    audioIsPlaying = true;
+  }
 }
 
 let interval;
@@ -44,7 +42,7 @@ class Char {
   }
 
   draw() {
-    context.drawImage(this.image, this.x, this.y, 120, 100);
+    context.drawImage(this.image, this.x, this.y, 50, 50);
   }
 
   moveUp() {
@@ -80,20 +78,21 @@ class Char {
   }
 }
 
+//player movement
 document.addEventListener("keydown", (event) => {
   switch (event.key) {
     case "a":
       zePovinho.moveLeft();
-    break;
+      break;
     case "d":
       zePovinho.moveRight();
-    break;
+      break;
     case "s":
       zePovinho.moveDown();
-    break;
+      break;
     case "w":
       zePovinho.moveUp();
-    break;
+      break;
   }
   context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
   zePovinho.draw();
@@ -107,7 +106,6 @@ window.onload = () => {
   };
 };
 
-
 const zePovinho = new Char(230, 690, image, context);
 function startGame() {
   zePovinho.draw();
@@ -118,3 +116,4 @@ function updateGameArea() {
   gameArea.clear();
   zePovinho.draw();
 }
+
