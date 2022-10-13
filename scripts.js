@@ -6,6 +6,8 @@ audio.play();
 
 let audioIsPlaying = true;
 
+const obstacles= [];
+
 
 
 
@@ -44,7 +46,7 @@ class Char {
   }
 
   draw() {
-    context.drawImage(this.image, this.x, this.y, 120, 100);
+    context.drawImage(this.image, this.x, this.y, 50, 50);
   }
 
   moveUp() {
@@ -118,3 +120,39 @@ function updateGameArea() {
   gameArea.clear();
   zePovinho.draw();
 }
+
+class Car {
+  constructor(x, y, width, height, src) {
+      this.x = x;
+      this.y = y;
+      this.width = width;
+      this.height = height;
+      this.image = new Image();
+      this.src = src
+  }
+
+  draw() {
+    this.image.src = this.src
+      context.drawImage(this.image, this.x, this.y, 50, 50);
+  }
+
+    left() {
+      return this.x;
+    }
+  
+    right() {
+      return this.x + this.image.width;
+    }
+}
+
+let carImage = new Image()
+window.onload = () => {
+carImage.src = "";
+document.getElementById('start-button').onclick = () => {
+  startGame();
+
+
+};
+}
+carImage
+const car1 = new Car(50, 50, 50, 50, )
