@@ -142,17 +142,17 @@ class Car {
 }
 
 const zePovinho = new Char(230, 690, image, context);
-let car1 = new Car(100, 100, 100, 100);
-let car2 = new Car(100, 100, 100, 100);
-let car3 = new Car(100, 100, 100, 100);
-let car4 = new Car(100, 100, 100, 100);
-let car5 = new Car(100, 100, 100, 100);
-let car6 = new Car(100, 100, 100, 100);
-let car7 = new Car(100, 100, 100, 100);
-let car8 = new Car(100, 100, 100, 100);
-let car9 = new Car(100, 100, 100, 100);
-let car10 = new Car(100, 100, 100, 100);
-let car11 = new Car(100, 100, 100, 100);
+let car1 = new Car(100, 100, 100, 50);
+let car2 = new Car(100, 100, 100, 50);
+let car3 = new Car(100, 100, 100, 50);
+let car4 = new Car(100, 100, 100, 50);
+let car5 = new Car(100, 100, 100, 50);
+let car6 = new Car(100, 100, 100, 50);
+let car7 = new Car(100, 100, 100, 50);
+let car8 = new Car(100, 100, 100, 50);
+let car9 = new Car(100, 100, 100, 50);
+let car10 = new Car(100, 100, 100, 50);
+let car11 = new Car(100, 100, 100, 50);
 
 function startGame() {
   zePovinho.draw();
