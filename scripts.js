@@ -6,19 +6,28 @@ audio.play();
 
 let audioIsPlaying = true;
 
-const obstacles= [];
-
-
-
+const obstacles = [
+  "./images/cars/bluecar.png",
+  "./images/cars/browncar.png",
+  "./images/cars/firetruck.png",
+  "./images/cars/greencar.png",
+  "./images/cars/orangecar.png",
+  "./images/cars/police.png",
+  "./images/cars/redcar.png",
+  "./images/cars/taxi.png",
+  "./images/cars/truck.png",
+  "./images/cars/whatcolorcar.png",
+];
+let random = parseInt(Math.random() * (0 + obstacles.length));
 
 function isAudioPlaying() {
-    if (audioIsPlaying === true) {
-        audio.pause();
-        audioIsPlaying = false;
-    } else {
-        audio.play();
-        audioIsPlaying = true;
-    }
+  if (audioIsPlaying === true) {
+    audio.pause();
+    audioIsPlaying = false;
+  } else {
+    audio.play();
+    audioIsPlaying = true;
+  }
 }
 
 let interval;
@@ -86,16 +95,16 @@ document.addEventListener("keydown", (event) => {
   switch (event.key) {
     case "a":
       zePovinho.moveLeft();
-    break;
+      break;
     case "d":
       zePovinho.moveRight();
-    break;
+      break;
     case "s":
       zePovinho.moveDown();
-    break;
+      break;
     case "w":
       zePovinho.moveUp();
-    break;
+      break;
   }
   context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
   zePovinho.draw();
@@ -111,31 +120,39 @@ window.onload = () => {
 
 class Car {
   constructor(x, y, width, height) {
-      this.x = x;
-      this.y = y;
-      this.width = width;
-      this.height = height;
-      this.image = new Image();
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+    this.image = new Image();
   }
 
   draw() {
-    this.image.src = './images/cars/blackcarPNG.png'
-
-      context.drawImage(this.image, this.x, this.y, this.width, this.height);
+    this.image.src =  obstacles[random]//seleciona aleatoriamente o valor do array// "./images/cars/blackcar.png";(backup)
+    context.drawImage(this.image, this.x, this.y, this.width, this.height);
   }
 
-    left() {
-      return this.x;
-    }
-  
-    right() {
-      return this.x + this.image.width;
-    }
+  left() {
+    return this.x;
+  }
+
+  right() {
+    return this.x + this.image.width;
+  }
 }
 
-
 const zePovinho = new Char(230, 690, image, context);
-let car = new Car(100, 100, 100, 100)
+let car1 = new Car(100, 100, 100, 100);
+let car2 = new Car(100, 100, 100, 100);
+let car3 = new Car(100, 100, 100, 100);
+let car4 = new Car(100, 100, 100, 100);
+let car5 = new Car(100, 100, 100, 100);
+let car6 = new Car(100, 100, 100, 100);
+let car7 = new Car(100, 100, 100, 100);
+let car8 = new Car(100, 100, 100, 100);
+let car9 = new Car(100, 100, 100, 100);
+let car10 = new Car(100, 100, 100, 100);
+let car11 = new Car(100, 100, 100, 100);
 
 function startGame() {
   zePovinho.draw();
@@ -145,10 +162,5 @@ gameArea.start();
 function updateGameArea() {
   gameArea.clear();
   zePovinho.draw();
-  car.draw()
-
+  car1.draw();
 }
-
-
-
-
