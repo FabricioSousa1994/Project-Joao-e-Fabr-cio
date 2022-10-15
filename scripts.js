@@ -34,27 +34,32 @@ class Car {
     this.height = height;
     this.image = new Image();
     this.speedX = 3;
-    this.obstacles = [
+    this.obstaclesRight = [
       "./images/cars/bluecar.png",
       "./images/cars/browncar.png",
       "./images/cars/firetruck.png",
       "./images/cars/greencar.png",
       "./images/cars/orangecar.png",
-      "./images/cars/police.png",
+      "./images/cars/police.gif",
       "./images/cars/redcar.png",
       "./images/cars/taxi.png",
       "./images/cars/truck.png",
       "./images/cars/whatcolorcar.png",
     ];
-    this.random = parseInt(Math.random() * (0 + this.obstacles.length));
+    this.random = parseInt(Math.random() * (0 + this.obstaclesRight.length));
   }
   draw() {
-    this.image.src = this.obstacles[this.random]; //seleciona aleatoriamente o valor do array//
-    context.drawImage(this.image, this.x, this.y, this.width, this.height); 
+    this.image.src = this.obstaclesRight[this.random]; //seleciona aleatoriamente o valor do array//
+    context.drawImage(this.image, this.x, this.y, this.width, this.height);
   }
   newPosition() {
     this.x += this.speedX;
   }
+
+  newPositionLeft() {
+    this.x -= this.speedX;
+  }
+
   left() {
     return this.x;
   }
@@ -63,29 +68,35 @@ class Car {
   }
 }
 
-let cars = [];
+let carsRight = [];
+let carsLeft = [];
 
 //let randomCarArray = parseInt(Math.random() * (0 + cars.length));
 
 const insertCars = () => {
-  const car1 = new Car(-110, 705, 100, 50);
-  const car2 = new Car(-110, 505, 100, 50);
-  const car3 = new Car(-110, 305, 100, 50);
-  const car4 = new Car(-110, 105, 100, 50);
-  const car5 = new Car(-110, 705, 100, 50);
-  const car6 = new Car(-110, 705, 100, 50);
-  const car7 = new Car(-110, 705, 100, 50);
-  const car8 = new Car(-110, 705, 100, 50);
-  const car9 = new Car(-110, 705, 100, 50);
-  const car10 = new Car(-110, 705, 100, 50);
-  const car11 = new Car(-110, 705, 100, 50);
+  const car1 = new Car(-90, 705, 100, 50); //ok   -->>>>
+  const car2 = new Car(-300, 578, 100, 50); //ok -->>>>
+  const car3 = new Car(-510, 545, 100, 50); //ok -->>>>
+  const car4 = new Car(-720, 510, 100, 50); //ok -->>>>
+  const car5 = new Car(-880, 470, 100, 50); //ok -->>>>
+  const car6 = new Car(-10, 355, 100, 50); //ok -->>>>
+  const car7 = new Car(-50, 290, 100, 50); //ok -->>>>
+  const car8 = new Car(-150, 250, 100, 50); //ok -->>>>
+  const car9 = new Car(-250, 320, 100, 50); //ok -->>>>
+  const car10 = new Car(720, 105, 100, 50);
+  const car11 = new Car(820, 180, 100, 50);
+  const car12 = new Car(900, 140, 100, 50);
+  const car13 = new Car(1000, 216, 100, 50);
+  const car14 = new Car(1200, 216, 100, 50);
 
-  if (gameArea.frames % 240 === 0) {
-    /*  cars = [] */
-    cars.push(car1, car2);
-  } else if (gameArea.frames % 120 === 0) {
+  if (gameArea.frames % 140 === 0) {
+    carsRight.push(car1, car2, car3, car4, car5, car6, car7, car8, car9);
+    carsLeft.push(car10, car11, car12, car13, car14);
+  } /* else if (gameArea.frames % 120 === 0) {
     cars.push(car3, car4);
-  }
+  } else if (gameArea.frames % 60 === 0) {
+    cars.push(car5, car6);
+  }*/
 };
 
 class Char {
@@ -101,16 +112,16 @@ class Char {
     context.drawImage(this.image, this.x, this.y, 50, 50);
   }
   moveUp() {
-    this.y -= 5;
+    this.y -= 6;
   }
   moveDown() {
-    this.y += 5;
+    this.y += 6;
   }
   moveLeft() {
-    this.x -= 5;
+    this.x -= 6;
   }
   moveRight() {
-    this.x += 5;
+    this.x += 6;
   }
   //
   /*
@@ -162,12 +173,15 @@ function updateGameArea() {
   gameArea.frames++;
   gameArea.clear();
   insertCars();
-  cars.forEach((car) => {
+  carsRight.forEach((car) => {
     car.draw();
     car.newPosition();
+  });
+  carsLeft.forEach((car) => {
+    car.draw();
+    car.newPositionLeft();
   });
   /* car1.newPosition();
   car1.draw(); */
   zePovinho.draw();
 }
-
