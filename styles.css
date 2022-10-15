@@ -10,7 +10,6 @@
     font-size: 25px;
 }
 .moneyImg {
-    /*transform: rotate(180deg);*/
     height: 50%;
     border: 0px;
 }
@@ -27,7 +26,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /*position: absolute;*/
+    position: absolute;
     width: 602px;
     height: 802px;
     border: 1px solid black;
@@ -52,7 +51,6 @@
     color: white;
     box-shadow: 5px 8px white;
     cursor: pointer;
-
 }
 
 #audioDiv {
@@ -89,5 +87,11 @@ canvas {
     }
     100%{
       opacity: 1;
+    }
+  }
+
+ @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
     }
   }
