@@ -35,16 +35,28 @@ class Car {
     this.image = new Image();
     this.speedX = 3;
     this.obstaclesRight = [
-      "./images/cars/bluecar.png",
-      "./images/cars/browncar.png",
-      "./images/cars/firetruck.png",
-      "./images/cars/greencar.png",
-      "./images/cars/orangecar.png",
-      "./images/cars/police.gif",
-      "./images/cars/redcar.png",
-      "./images/cars/taxi.png",
-      "./images/cars/truck.png",
-      "./images/cars/whatcolorcar.png",
+      "./images/carsRight/bluecar.png",
+      "./images/carsRight/browncar.png",
+      "./images/carsRight/firetruck.png",
+      "./images/carsRight/greencar.png",
+      "./images/carsRight/orangecar.png",
+      "./images/carsRight/police.gif",
+      "./images/carsRight/redcar.png",
+      "./images/carsRight/taxi.png",
+      "./images/carsRight/truck.png",
+      "./images/carsRight/whatcolorcar.png",
+    ];
+    this.obstaclesLeft = [
+      "./images/carsLeft/bluecar.png",
+      "./images/carsLeft/browncar.png",
+      "./images/carsLeft/firetruck.png",
+      "./images/carsLeft/greencar.png",
+      "./images/carsLeft/orangecar.png",
+      "./images/carsLeft/police.gif",
+      "./images/carsLeft/redcar.png",
+      "./images/carsLeft/taxi.png",
+      "./images/carsLeft/truck.png",
+      "./images/carsLeft/whatcolorcar.png",
     ];
     this.random = parseInt(Math.random() * (0 + this.obstaclesRight.length));
   }
@@ -54,6 +66,11 @@ class Car {
   }
   newPosition() {
     this.x += this.speedX;
+  }
+
+  drawLeft() {
+    this.image.src = this.obstaclesLeft[this.random];
+    context.drawImage(this.image, this.x, this.y, this.width, this.height);
   }
 
   newPositionLeft() {
@@ -83,7 +100,7 @@ const insertCars = () => {
   const car7 = new Car(-50, 290, 100, 50); //ok -->>>>
   const car8 = new Car(-150, 250, 100, 50); //ok -->>>>
   const car9 = new Car(-250, 320, 100, 50); //ok -->>>>
-  const car10 = new Car(720, 105, 100, 50);
+  const car10 = new Car(720, 101, 100, 50);
   const car11 = new Car(820, 180, 100, 50);
   const car12 = new Car(900, 140, 100, 50);
   const car13 = new Car(1000, 216, 100, 50);
@@ -178,7 +195,7 @@ function updateGameArea() {
     car.newPosition();
   });
   carsLeft.forEach((car) => {
-    car.draw();
+    car.drawLeft();
     car.newPositionLeft();
   });
   /* car1.newPosition();
