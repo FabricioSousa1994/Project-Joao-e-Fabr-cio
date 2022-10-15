@@ -68,25 +68,26 @@ let cars = [];
 //let randomCarArray = parseInt(Math.random() * (0 + cars.length));
 
 const insertCars = () => {
-  const car1 = new Car(-110, 705, 100, 50);
-  const car2 = new Car(-110, 505, 100, 50);
-  const car3 = new Car(-110, 305, 100, 50);
-  const car4 = new Car(-110, 105, 100, 50);
-  const car5 = new Car(-110, 705, 100, 50);
-  const car6 = new Car(-110, 705, 100, 50);
-  const car7 = new Car(-110, 705, 100, 50);
-  const car8 = new Car(-110, 705, 100, 50);
-  const car9 = new Car(-110, 705, 100, 50);
-  const car10 = new Car(-110, 705, 100, 50);
-  const car11 = new Car(-110, 705, 100, 50);
+  const car1 = new Car(-90, 705, 100, 50);
+  const car2 = new Car(-90, 508, 100, 50);
+  const car3 = new Car(-90, 305, 100, 50);
+  const car4 = new Car(-90, 105, 100, 50);
+  const car5 = new Car(-90, 605, 100, 50);
+  const car6 = new Car(-90, 405, 100, 50);
+  const car7 = new Car(-90, 430, 100, 50);
+  const car8 = new Car(-90, 510, 100, 50);
+  const car9 = new Car(-90, 705, 100, 50);
+  const car10 = new Car(-90, 705, 100, 50);
+  const car11 = new Car(-90, 705, 100, 50);
 
   if (gameArea.frames % 240 === 0) {
-    /*  cars = [] */
     cars.push(car1, car2);
   } else if (gameArea.frames % 120 === 0) {
-    cars.push(car3, car4);
+    cars.push(car3, car4, car7, car8);
+  } else if (gameArea.frames % 90 === 0) {
+    cars.push(car5, car6)
   }
-};
+  }
 
 class Char {
   constructor(x, y, height, width, ctx) {
