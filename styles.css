@@ -31,7 +31,7 @@
     width: 602px;
     height: 802px;
     border: 1px solid black;
-    background-image: url(images/bgmb.gif);
+    background-image: url(images/menu_background.gif);
     background-size: cover;
 }
 
@@ -75,7 +75,7 @@
 
 canvas {
     border: 1px solid red;
-    background-image: url(images/bg.jpg);
+    background-image: url(images/canvas_background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
