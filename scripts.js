@@ -18,6 +18,7 @@ const obstacles = [
   "./images/cars/truck.png",
   "./images/cars/whatcolorcar.png",
 ];
+
 let random = parseInt(Math.random() * (0 + obstacles.length));
 
 function isAudioPlaying() {
@@ -33,6 +34,7 @@ function isAudioPlaying() {
 let interval;
 
 const gameArea = {
+  frames: 0,
   start: () => {
     interval = setInterval(updateGameArea, 20);
   },
@@ -43,6 +45,37 @@ const gameArea = {
     context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
   },
 };
+
+class Car {
+  constructor(x, y, width, height) {
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+    this.image = new Image();
+    this.speedX = 3;
+  }
+
+  draw() {
+    this.image.src = obstacles[random]; //seleciona aleatoriamente o valor do array//
+    context.drawImage(this.image, this.x, this.y, this.width, this.height);
+  }
+
+  newPosition() {
+    this.x += this.speedX;
+  }
+
+  left() {
+    return this.x;
+  }
+
+  right() {
+    return this.x + this.image.width;
+  }
+}
+
+const car = new Car(100, 100, 100, 50);
+
 
 class Char {
   constructor(x, y, height, width, ctx) {
@@ -74,6 +107,8 @@ class Char {
     this.x += 5;
   }
 
+  //
+/*
   left() {
     return this.x;
   }
@@ -88,7 +123,7 @@ class Char {
 
   bottom() {
     return this.y + this.image.height;
-  }
+  }*/
 }
 
 document.addEventListener("keydown", (event) => {
@@ -118,41 +153,7 @@ window.onload = () => {
   };
 };
 
-class Car {
-  constructor(x, y, width, height) {
-    this.x = x;
-    this.y = y;
-    this.width = width;
-    this.height = height;
-    this.image = new Image();
-  }
-
-  draw() {
-    this.image.src =  obstacles[random]//seleciona aleatoriamente o valor do array// "./images/cars/blackcar.png";(backup)
-    context.drawImage(this.image, this.x, this.y, this.width, this.height);
-  }
-
-  left() {
-    return this.x;
-  }
-
-  right() {
-    return this.x + this.image.width;
-  }
-}
-
 const zePovinho = new Char(230, 690, image, context);
-let car1 = new Car(100, 100, 100, 50);
-let car2 = new Car(100, 100, 100, 50);
-let car3 = new Car(100, 100, 100, 50);
-let car4 = new Car(100, 100, 100, 50);
-let car5 = new Car(100, 100, 100, 50);
-let car6 = new Car(100, 100, 100, 50);
-let car7 = new Car(100, 100, 100, 50);
-let car8 = new Car(100, 100, 100, 50);
-let car9 = new Car(100, 100, 100, 50);
-let car10 = new Car(100, 100, 100, 50);
-let car11 = new Car(100, 100, 100, 50);
 
 function startGame() {
   zePovinho.draw();
@@ -161,6 +162,7 @@ gameArea.start();
 
 function updateGameArea() {
   gameArea.clear();
+  car.newPosition();
   zePovinho.draw();
-  car1.draw();
+  car.draw();
 }
