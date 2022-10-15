@@ -88,37 +88,6 @@ const insertCars = () => {
   }
 };
 
-class Car {
-  constructor(x, y, width, height) {
-    this.x = x;
-    this.y = y;
-    this.width = width;
-    this.height = height;
-    this.image = new Image();
-    this.speedX = 3;
-  }
-
-  draw() {
-    this.image.src = obstacles[random]; //seleciona aleatoriamente o valor do array//
-    context.drawImage(this.image, this.x, this.y, this.width, this.height);
-  }
-
-  newPosition() {
-    this.x += this.speedX;
-  }
-
-  left() {
-    return this.x;
-  }
-
-  right() {
-    return this.x + this.image.width;
-  }
-}
-
-const car = new Car(100, 100, 100, 50);
-
-
 class Char {
   constructor(x, y, height, width, ctx) {
     this.x = x;
@@ -201,3 +170,4 @@ function updateGameArea() {
   car1.draw(); */
   zePovinho.draw();
 }
+
