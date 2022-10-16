@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
 
+body {
+    background-image: url(images/giphy.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -29,7 +35,6 @@
     position: absolute;
     width: 602px;
     height: 802px;
-    border: 1px solid black;
     background-image: url(images/menu_background.gif);
     background-size: cover;
 }
@@ -72,7 +77,6 @@
 }
 
 canvas {
-    border: 1px solid red;
     background-image: url(images/canvas_background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -90,8 +94,9 @@ canvas {
     }
   }
 
- @keyframes rotate {
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}

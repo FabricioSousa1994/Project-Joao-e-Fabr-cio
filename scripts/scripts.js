@@ -31,6 +31,7 @@ const gameArea = {
   },
 };
 
+
 // Create all cars
 const insertCars = () => {
   const car1 = new Car(0, 705, 100, 50);
@@ -48,6 +49,24 @@ const insertCars = () => {
   const car13 = new Car(1000, 216, 100, 50);
   const car14 = new Car(1200, 216, 100, 50);
   const car15 = new Car(1600, 102, 100, 50);
+
+  allCars.push(
+    car1,
+    car2,
+    car3,
+    car4,
+    car5,
+    car6,
+    car7,
+    car8,
+    car9,
+    car10,
+    car11,
+    car12,
+    car13,
+    car14,
+    car15
+  );
 
   if (gameArea.frames % 140 === 0) {
     carsRight.push(car1, car2, car3, car4, car5, car6, car7, car8, car9);

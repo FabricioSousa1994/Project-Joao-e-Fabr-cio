@@ -1,5 +1,6 @@
 const carsRight = [];
 const carsLeft = [];
+const allCars = [];
 
 // Car(obstacles) Class
 class Car {
