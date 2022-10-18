@@ -1,7 +1,6 @@
 const carsRight = [];
 const carsLeft = [];
 const allCars = [];
-
 // Car(obstacles) Class
 class Car {
   constructor(x, y, width, height) {
@@ -11,82 +10,68 @@ class Car {
     this.height = height;
     this.image = new Image();
     this.speedX = 3;
-
     // Cars from left to right
     this.obstaclesRight = [
-      "./images/carsRight/bluecar.png",
+      /* "./images/carsRight/bluecar.png",
       "./images/carsRight/browncar.png",
       "./images/carsRight/firetruck.png",
       "./images/carsRight/greencar.png",
-      "./images/carsRight/orangecar.png",
+      "./images/carsRight/orangecar.png", */
       "./images/carsRight/police.gif",
-      "./images/carsRight/redcar.png",
+      /*    "./images/carsRight/redcar.png",
       "./images/carsRight/taxi.png",
       "./images/carsRight/truck.png",
-      "./images/carsRight/whatcolorcar.png",
+      "./images/carsRight/whatcolorcar.png", */
     ];
-
     // Cars from right to left
     this.obstaclesLeft = [
-      "./images/carsLeft/bluecar.png",
+      /*     "./images/carsLeft/bluecar.png",
       "./images/carsLeft/browncar.png",
       "./images/carsLeft/firetruck.png",
       "./images/carsLeft/greencar.png",
       "./images/carsLeft/orangecar.png",
       "./images/carsLeft/police.png",
       "./images/carsLeft/redcar.png",
-      "./images/carsLeft/taxi.png",
+      "./images/carsLeft/taxi.png", */
       "./images/carsLeft/police.png",
-      "./images/carsLeft/whatcolorcar.png",
+      /*    "./images/carsLeft/whatcolorcar.png", */
     ];
     this.random = parseInt(Math.random() * (0 + this.obstaclesRight.length)); //obstaclesRight and left has the same lenght
   }
-
   draw() {
     this.image.src = this.obstaclesRight[this.random]; // Get a image randomly
     context.drawImage(this.image, this.x, this.y, this.width, this.height);
   }
-
   newPosition() {
     this.x += this.speedX;
   }
-
   drawLeft() {
     this.image.src = this.obstaclesLeft[this.random];
     context.drawImage(this.image, this.x, this.y, this.width, this.height);
   }
-
   newPositionLeft() {
     this.x -= this.speedX;
   }
-
   left() {
     return this.x;
   }
-
   right() {
     return this.x + this.width;
   }
-
   top() {
     return this.y;
   }
-
   bottom() {
     return this.y + this.height;
   }
-
-  
 }
-
 // Character class
 class Char {
-  constructor(x, y, height, width, ctx) {
+  constructor(x, y, image) {
     this.x = x;
     this.y = y;
-    this.height = height;
-    this.width = width;
-    this.ctx = ctx;
+    this.height = 50;
+    this.width = 50;
     this.image = image;
   }
   draw() {
@@ -104,29 +89,25 @@ class Char {
   moveRight() {
     this.x += 6;
   }
-
   left() {
     return this.x;
   }
-
   right() {
     return this.x + this.width;
   }
-
   top() {
     return this.y;
   }
-
   bottom() {
     return this.y + this.height;
   }
-  
-  collisionWithObstacle(enemy) {
+  collisionWithObstacle(car) {
+    //   audio.pause();
     return !(
-      this.bottom() < enemy.top() ||
-      this.top() > enemy.bottom() ||
-      this.right() < enemy.left() ||
-      this.left() > enemy.right()
+      this.bottom() < car.top() ||
+      this.top() > car.bottom() ||
+      this.right() < car.left() ||
+      this.left() > car.right()
     );
   }
 }
