@@ -3,9 +3,7 @@
 
 
 body {
-    background-image: url(images/giphy.gif);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url(images/bg.gif);
 }
 
 * {
@@ -98,5 +96,5 @@ canvas {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 60px;
 }

@@ -11,19 +11,23 @@
     <script src="scripts/scripts.js" defer></script>
 </head>
 <body>
-    <div class="center">
-        <div class="menu" id="menu">  
-            <div id="audioDiv">
-                <audio src="sound/music.mp3"></audio>
-                <button onclick="isAudioPlaying()" id="onOff" >
-                    <img src="images/mute-logo.png" alt="mute-img" id="muteLogo">
-                </button>
-            </div>          
-            <h1 id="tittle">Road to 125€</h1>      
-        <button id="startGame">Start Game</button>
-        <img class="moneyImg" src="images/raining-money-38.webp" alt="raining-money">
+    <div class="border">
+        <div class="animated">
+            <div class="center">
+                <div class="menu" id="menu">  
+                    <div id="audioDiv">
+                        <audio src="sound/music.mp3"></audio>
+                        <button onclick="isAudioPlaying()" id="onOff" >
+                            <img src="images/mute-logo.png" alt="mute-img" id="muteLogo">
+                        </button>
+                    </div>          
+                    <h1 id="tittle">Road to 125€</h1>      
+                <button id="startGame">Start Game</button>
+                <img class="moneyImg" src="images/raining-money-38.webp" alt="raining-money">
+                </div>
+                <canvas id="canvas" width="600" height="800"></canvas>
+            </div>
         </div>
-        <canvas id="canvas" width="600" height="800"></canvas>
     </div>
 </body> 
 </html>
