@@ -34,7 +34,7 @@ class Car {
       "./images/carsLeft/redcar.png",
       "./images/carsLeft/taxi.png",
       "./images/carsLeft/police.png",
-      "./images/carsLeft/whatcolorcar.png",
+      "./images/carsLeft/whatcolorcar.png",*/
     ];
     this.random = parseInt(Math.random() * (0 + this.obstaclesRight.length)); //obstaclesRight and left has the same lenght
   }
