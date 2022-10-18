@@ -1,9 +1,10 @@
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 const audio = document.querySelector("audio");
+
 audio.play();
 let audioIsPlaying = true;
-let gameIsOver = false;
+
 // Music on/off
 function isAudioPlaying() {
   if (audioIsPlaying === true) {
@@ -14,7 +15,10 @@ function isAudioPlaying() {
     audioIsPlaying = true;
   }
 }
+
 let interval;
+let gameIsOver = false;
+
 const gameArea = {
   frames: 0,
   start: () => {

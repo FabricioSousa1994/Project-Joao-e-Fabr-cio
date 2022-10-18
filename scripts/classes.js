@@ -12,29 +12,29 @@ class Car {
     this.speedX = 3;
     // Cars from left to right
     this.obstaclesRight = [
-      /* "./images/carsRight/bluecar.png",
+      "./images/carsRight/bluecar.png",
       "./images/carsRight/browncar.png",
       "./images/carsRight/firetruck.png",
       "./images/carsRight/greencar.png",
-      "./images/carsRight/orangecar.png", */
+      "./images/carsRight/orangecar.png",
       "./images/carsRight/police.gif",
-      /*    "./images/carsRight/redcar.png",
+      "./images/carsRight/redcar.png",
       "./images/carsRight/taxi.png",
       "./images/carsRight/truck.png",
-      "./images/carsRight/whatcolorcar.png", */
+      "./images/carsRight/whatcolorcar.png", 
     ];
     // Cars from right to left
     this.obstaclesLeft = [
-      /*     "./images/carsLeft/bluecar.png",
+     "./images/carsLeft/bluecar.png",
       "./images/carsLeft/browncar.png",
       "./images/carsLeft/firetruck.png",
       "./images/carsLeft/greencar.png",
       "./images/carsLeft/orangecar.png",
       "./images/carsLeft/police.png",
       "./images/carsLeft/redcar.png",
-      "./images/carsLeft/taxi.png", */
+      "./images/carsLeft/taxi.png",
       "./images/carsLeft/police.png",
-      /*    "./images/carsLeft/whatcolorcar.png", */
+      "./images/carsLeft/whatcolorcar.png",
     ];
     this.random = parseInt(Math.random() * (0 + this.obstaclesRight.length)); //obstaclesRight and left has the same lenght
   }
@@ -102,7 +102,7 @@ class Char {
     return this.y + this.height;
   }
   collisionWithObstacle(car) {
-    //   audio.pause();
+    audio.pause();
     return !(
       this.bottom() < car.top() ||
       this.top() > car.bottom() ||
