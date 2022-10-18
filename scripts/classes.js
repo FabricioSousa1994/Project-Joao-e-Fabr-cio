@@ -46,6 +46,7 @@ class Car {
     this.image.src = this.obstaclesRight[this.random]; // Get a image randomly
     context.drawImage(this.image, this.x, this.y, this.width, this.height);
   }
+
   newPosition() {
     this.x += this.speedX;
   }
@@ -62,9 +63,20 @@ class Car {
   left() {
     return this.x;
   }
+
   right() {
-    return this.x + this.image.width;
+    return this.x + this.width;
   }
+
+  top() {
+    return this.y;
+  }
+
+  bottom() {
+    return this.y + this.height;
+  }
+
+  
 }
 
 // Character class
@@ -96,13 +108,25 @@ class Char {
   left() {
     return this.x;
   }
+
   right() {
-    return this.x + this.image.width;
+    return this.x + this.width;
   }
+
   top() {
     return this.y;
   }
+
   bottom() {
-    return this.y + this.image.height;
+    return this.y + this.height;
+  }
+  
+  collisionWithObstacle(enemy) {
+    return !(
+      this.bottom() < enemy.top() ||
+      this.top() > enemy.bottom() ||
+      this.right() < enemy.left() ||
+      this.left() > enemy.right()
+    );
   }
 }

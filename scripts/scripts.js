@@ -5,6 +5,8 @@ const audio = document.querySelector("audio");
 audio.play();
 let audioIsPlaying = true;
 
+let gameIsOver = false;
+
 // Music on/off
 function isAudioPlaying() {
   if (audioIsPlaying === true) {
@@ -79,7 +81,7 @@ window.onload = () => {
   image.src = "images/char.png";
   document.getElementById("startGame").onclick = () => {
     document.getElementById("menu").style.display = "none";
-    startGame();
+    /* startGame(); */
     gameArea.start();
   };
 };
@@ -103,6 +105,4 @@ document.addEventListener("keydown", (event) => {
       zePovinho.moveUp();
       break;
   }
-  context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-  zePovinho.draw();
 });
