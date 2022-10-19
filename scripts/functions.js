@@ -29,15 +29,17 @@ function checkGameOver() {
     }
     return false;
   });
-  const crashed2 = carsRight.some((car) => {
-    return zePovinho.collisionWithObstacle(car);
+  const crashed2 = carsLeft.some((car) => {
+    if (zePovinho.collisionWithObstacle(car)) {
+      return true;
+    }
+    return false;
   });
-  if (crashed) {
-    console.log("crash");
+  if (crashed || crashed2) {
     gameIsOver = true;
     gameArea.stop();
-    gameArea.clear();
-    context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-    context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    //gameArea.clear();
+    //context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    //context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
   }
 }

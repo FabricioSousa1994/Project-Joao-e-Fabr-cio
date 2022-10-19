@@ -1,6 +1,54 @@
 const carsRight = [];
 const carsLeft = [];
-const allCars = [];
+
+// Character class
+class Char {
+  constructor(x, y, image) {
+    this.x = x;
+    this.y = y;
+    this.height = 30;
+    this.width = 30;
+    this.image = image;
+  }
+  draw() {
+    context.drawImage(this.image, this.x, this.y, 30, 30);
+  }
+  moveUp() {
+    this.y -= 15;
+  }
+  moveDown() {
+    this.y += 15;
+  }
+  moveLeft() {
+    this.x -= 15;
+  }
+  moveRight() {
+    this.x += 15;
+  }
+  left() {
+    return this.x;
+  }
+  right() {
+    return this.x + this.width;
+  }
+  top() {
+    return this.y;
+  }
+  bottom() {
+    return this.y + this.height;
+  }
+  collisionWithObstacle(car) {
+    audio.pause();
+    return !(
+      this.bottom() < car.top() ||
+      this.top() > car.bottom() ||
+      this.right() < car.left() ||
+      this.left() > car.right()
+    );
+  }
+}
+
+
 // Car(obstacles) Class
 class Car {
   constructor(x, y, width, height) {
@@ -62,51 +110,5 @@ class Car {
   }
   bottom() {
     return this.y + this.height;
-  }
-}
-// Character class
-class Char {
-  constructor(x, y, image) {
-    this.x = x;
-    this.y = y;
-    this.height = 50;
-    this.width = 50;
-    this.image = image;
-  }
-  draw() {
-    context.drawImage(this.image, this.x, this.y, 50, 50);
-  }
-  moveUp() {
-    this.y -= 6;
-  }
-  moveDown() {
-    this.y += 6;
-  }
-  moveLeft() {
-    this.x -= 6;
-  }
-  moveRight() {
-    this.x += 6;
-  }
-  left() {
-    return this.x;
-  }
-  right() {
-    return this.x + this.width;
-  }
-  top() {
-    return this.y;
-  }
-  bottom() {
-    return this.y + this.height;
-  }
-  collisionWithObstacle(car) {
-    //   audio.pause();
-    return !(
-      this.bottom() < car.top() ||
-      this.top() > car.bottom() ||
-      this.right() < car.left() ||
-      this.left() > car.right()
-    );
   }
 }
