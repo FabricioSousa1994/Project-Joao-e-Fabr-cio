@@ -14,16 +14,16 @@ class Char {
     context.drawImage(this.image, this.x, this.y, 30, 30);
   }
   moveUp() {
-    this.y -= 15;
+    this.y -= 13;
   }
   moveDown() {
-    this.y += 15;
+    this.y += 13;
   }
   moveLeft() {
-    this.x -= 15;
+    this.x -= 20;
   }
   moveRight() {
-    this.x += 15;
+    this.x += 20;
   }
   left() {
     return this.x;
@@ -57,7 +57,7 @@ class Car {
     this.width = width;
     this.height = height;
     this.image = new Image();
-    this.speedX = 3;
+    this.speedX = 2.8;
     // Cars from left to right
     this.obstaclesRight = [
       "./images/carsRight/bluecar.png",
