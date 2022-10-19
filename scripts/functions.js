@@ -10,12 +10,12 @@ function isAudioPlaying() {
 
 document.getElementById("instructions").onclick = () => {
   document.getElementById("instructions").style.display = "none";
-}
+};
 
 function updateGameArea() {
   insertCars();
   gameArea.frames++;
-  gameArea.clear();  
+  gameArea.clear();
   carsRight.forEach((car) => {
     car.draw();
     car.newPosition();
