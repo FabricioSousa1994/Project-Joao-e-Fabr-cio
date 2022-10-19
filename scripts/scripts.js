@@ -80,7 +80,9 @@ document.addEventListener("keydown", (event) => {
       zePovinho.moveDown();
       break;
     case "w":
+      if (gameArea.frames > 250) {
       zePovinho.moveUp();
+    }
       break;
   }
 });

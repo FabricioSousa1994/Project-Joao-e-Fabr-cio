@@ -38,7 +38,6 @@ class Char {
     return this.y + this.height;
   }
   collisionWithObstacle(car) {
-    audio.pause();
     return !(
       this.bottom() < car.top() ||
       this.top() > car.bottom() ||

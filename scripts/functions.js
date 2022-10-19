@@ -7,10 +7,15 @@ function isAudioPlaying() {
     audioIsPlaying = true;
   }
 }
+
+document.getElementById("instructions").onclick = () => {
+  document.getElementById("instructions").style.display = "none";
+}
+
 function updateGameArea() {
-  gameArea.frames++;
-  gameArea.clear();
   insertCars();
+  gameArea.frames++;
+  gameArea.clear();  
   carsRight.forEach((car) => {
     car.draw();
     car.newPosition();
@@ -22,6 +27,7 @@ function updateGameArea() {
   zePovinho.draw();
   checkGameOver();
 }
+
 function checkGameOver() {
   const crashed = carsRight.some((car) => {
     if (zePovinho.collisionWithObstacle(car)) {
@@ -36,6 +42,7 @@ function checkGameOver() {
     return false;
   });
   if (crashed || crashed2) {
+    audio.pause();
     gameIsOver = true;
     gameArea.stop();
     //gameArea.clear();

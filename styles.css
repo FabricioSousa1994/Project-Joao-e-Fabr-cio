@@ -69,7 +69,8 @@ body {
     border: 0px;
 }
 
-#muteLogo {
+#muteLogo,
+#infoLogo {
     height: 20px;
     background-color: transparent;
 }
@@ -97,4 +98,40 @@ canvas {
     justify-content: center;
     align-items: center;
     margin-top: 60px;
+}
+
+#instructions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    background-color: rgb(0, 0, 0, 0.94);
+    width: 598px;
+    height: 798px;
+    color: white;
+}
+
+.wasd {
+    height: 250px;
+}
+
+h1 {
+    font-size: 35px;
+    margin-bottom: 50px;
+}
+ol,
+p,
+h1 {
+    text-align: center;
+}
+
+ol {
+    margin-left: 50px;
+}
+
+p {
+    margin-top: 60px;
+    animation: animate 1s infinite;
 }
