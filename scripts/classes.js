@@ -56,6 +56,7 @@ class Car {
     this.height = height;
     this.image = new Image();
     this.speedX = 2.8;
+
     // Cars from left to right
     this.obstaclesRight = [
       "./images/carsRight/bluecar.png",
@@ -68,6 +69,7 @@ class Car {
       "./images/carsRight/truck.png",
       "./images/carsRight/whatcolorcar.png",
     ];
+    
     // Cars from right to left
     this.obstaclesLeft = [
       "./images/carsLeft/bluecar.png",
@@ -115,13 +117,13 @@ class Costa {
   constructor(x, y, image) {
     this.x = x;
     this.y = y;
-    this.width = 30;
-    this.height = 30;
+    this.width = 75;
+    this.height = 50;
     this.image = image;
   }
 
   draw() {
-    context.drawImage(this.image, this.x, this.y, 30, 30);
+    context.drawImage(this.image, this.x, this.y, 75, 50);
   }
 
   left() {
@@ -139,6 +141,6 @@ class Costa {
 }
 
 const imageCosta = new Image();
-imageCosta.src = "images/antonio-costa.jpg";
+imageCosta.src = "images/antonio-costa.png";
 
-const costa = new Costa(500, 500, imageCosta);
+const costa = new Costa(400, 35, imageCosta);

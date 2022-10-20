@@ -25,10 +25,13 @@ function updateGameArea() {
     car.newPositionLeft();
   });
   zePovinho.draw();
-  costa.draw()
+  costa.draw();
   checkGameOver();
-  /* checkWin()
-  gameArea.score() */
+  gameArea.score();
+  checkWin();
+  /* checkWin();
+  scorer(); */
+
 }
 
 function checkGameOver() {
@@ -44,42 +47,40 @@ function checkGameOver() {
     }
     return false;
   });
-  /* const crashed3 = () => {
-    if (zePovinho.x > 600 || zePovinho.x < 0 || zePovinho.y > 800) {
-    return true;
-  }
-    return false; */
-}
 
-  if (crashed || crashed2 /* || crashed3 */) {
+  if (crashed || crashed2) {
     audio.pause();
     gameIsOver = true;
     gameArea.stop();
-    //gameArea.clear();
-    //context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-    //context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    /* gameArea.clear();
+    context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight); */
   }
-
-
-let win = false;
+}
 
 function checkWin() {
-  const winner = () => {
-    if (zePovinho.y <= 200) {
-    return true;
+  if (zePovinho.y <= 40) {
+    counter = 125;
   }
-    return false
-} 
+}
+
+/* function checkWin() {
+  const winner = () => {
+    if (zePovinho.y <= 350) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   if (winner) {
     win = true;
   }
 }
 
-
-let counter = 0;
-
 function scorer() {
   if (checkWin()) {
-  counter +125; 
+    counter = 125;
   }
 }
+ */

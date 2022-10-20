@@ -18,6 +18,7 @@ function isAudioPlaying() {
 
 let interval;
 let gameIsOver = false;
+let counter = 0;
 
 const gameArea = {
   frames: 0,
@@ -30,13 +31,11 @@ const gameArea = {
   clear: () => {
     context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
   },
-  score: function() {
-    if (scorer()) {
-      context.font = "20px Arial";
-      context.fillStyle = "white";
-      context.fillText(`Score: ${counter}`, 100, 30)
-    }
-  }
+  score: () => {
+    context.font = "15px Silkscreen";
+    context.fillStyle = "white";
+    context.fillText(`Score: ${counter}`, 20, 30);
+  },
 };
 
 // Create all cars
@@ -78,19 +77,30 @@ const zePovinho = new Char(230, 755, image);
 document.addEventListener("keydown", (event) => {
   switch (event.key) {
     case "a":
-      zePovinho.moveLeft();
+      if (zePovinho.x <= 10) {
+        zePovinho.speedX = 0;
+      } else {
+        zePovinho.moveLeft();
+      }
       break;
     case "d":
-      zePovinho.moveRight();
+      if (zePovinho.x >= 565) {
+        zePovinho.speedX = 0;
+      } else {
+        zePovinho.moveRight();
+      }
       break;
     case "s":
-      zePovinho.moveDown();
+      if (zePovinho.y >= 750) {
+        zePovinho.speedX = 0;
+      } else {
+        zePovinho.moveDown();
+      }
       break;
     case "w":
       if (gameArea.frames > 250) {
-      zePovinho.moveUp();
-    }
+        zePovinho.moveUp();
+      }
       break;
   }
 });
-
