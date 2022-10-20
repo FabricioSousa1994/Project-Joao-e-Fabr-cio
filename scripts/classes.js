@@ -47,7 +47,6 @@ class Char {
   }
 }
 
-
 // Car(obstacles) Class
 class Car {
   constructor(x, y, width, height) {
@@ -111,3 +110,35 @@ class Car {
     return this.y + this.height;
   }
 }
+
+class Costa {
+  constructor(x, y, image) {
+    this.x = x;
+    this.y = y;
+    this.width = 30;
+    this.height = 30;
+    this.image = image;
+  }
+
+  draw() {
+    context.drawImage(this.image, this.x, this.y, 30, 30);
+  }
+
+  left() {
+    return this.x;
+  }
+  right() {
+    return this.x + this.width;
+  }
+  top() {
+    return this.y;
+  }
+  bottom() {
+    return this.y + this.height;
+  }
+}
+
+const imageCosta = new Image();
+imageCosta.src = "images/antonio-costa.jpg";
+
+const costa = new Costa(500, 500, imageCosta);

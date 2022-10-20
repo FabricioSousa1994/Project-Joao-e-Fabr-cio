@@ -30,6 +30,13 @@ const gameArea = {
   clear: () => {
     context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
   },
+  score: function() {
+    if (scorer()) {
+      context.font = "20px Arial";
+      context.fillStyle = "white";
+      context.fillText(`Score: ${counter}`, 100, 30)
+    }
+  }
 };
 
 // Create all cars
@@ -86,3 +93,4 @@ document.addEventListener("keydown", (event) => {
       break;
   }
 });
+
