@@ -29,8 +29,6 @@ function updateGameArea() {
   checkGameOver();
   gameArea.score();
   checkWin();
-  /* checkWin();
-  scorer(); */
 
 }
 
@@ -59,28 +57,7 @@ function checkGameOver() {
 }
 
 function checkWin() {
-  if (zePovinho.y <= 40) {
+  if (zePovinho.y <= 60) {
     counter = 125;
   }
 }
-
-/* function checkWin() {
-  const winner = () => {
-    if (zePovinho.y <= 350) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-  if (winner) {
-    win = true;
-  }
-}
-
-function scorer() {
-  if (checkWin()) {
-    counter = 125;
-  }
-}
- */

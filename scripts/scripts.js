@@ -34,7 +34,7 @@ const gameArea = {
   score: () => {
     context.font = "15px Silkscreen";
     context.fillStyle = "white";
-    context.fillText(`Score: ${counter}`, 20, 30);
+    context.fillText(`Score: ${counter},00€`, 20, 30);
   },
 };
 
@@ -70,6 +70,12 @@ window.onload = () => {
   };
 };
 
+// Create Costa
+const imageCosta = new Image();
+imageCosta.src = "images/antonio-costa.png";
+
+const costa = new Costa(400, 35, imageCosta);
+
 // Create the character
 const zePovinho = new Char(230, 755, image);
 
@@ -99,7 +105,7 @@ document.addEventListener("keydown", (event) => {
       break;
     case "w":
       //if (gameArea.frames > 250) {
-        zePovinho.moveUp();
+      zePovinho.moveUp();
       //}
       break;
   }
