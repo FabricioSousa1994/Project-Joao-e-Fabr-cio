@@ -51,7 +51,7 @@ const insertCars = () => {
   const car9 = new Car(-950, 320, 100, 40);
   const car10 = new Car(800, 140, 100, 40);
   const car11 = new Car(1000, 180, 100, 40);
-  const car12 = new Car(1500, 140, 100, 40);
+  const car12 = new Car(3000, 140, 100, 40);
   const car13 = new Car(2000, 216, 100, 40);
   const car14 = new Car(3000, 216, 100, 40);
   const car15 = new Car(4000, 102, 100, 40);
@@ -63,7 +63,7 @@ const insertCars = () => {
 };
 let image = new Image();
 window.onload = () => {
-  image.src = "images/char.jpg";
+  image.src = "images/char.png";
   document.getElementById("startGame").onclick = () => {
     document.getElementById("menu").style.display = "none";
     gameArea.start();
@@ -76,8 +76,10 @@ imageCosta.src = "images/antonio-costa.png";
 
 const costa = new Costa(400, 35, imageCosta);
 
+
 // Create the character
 const zePovinho = new Char(230, 755, image);
+
 
 // Add movement to character
 document.addEventListener("keydown", (event) => {

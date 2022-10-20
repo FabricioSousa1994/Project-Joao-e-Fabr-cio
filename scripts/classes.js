@@ -6,12 +6,12 @@ class Char {
   constructor(x, y, image) {
     this.x = x;
     this.y = y;
-    this.height = 30;
+    this.height = 50;
     this.width = 30;
     this.image = image;
   }
   draw() {
-    context.drawImage(this.image, this.x, this.y, 30, 30);
+    context.drawImage(this.image, this.x, this.y, 50, 30);
   }
   moveUp() {
     this.y -= 13;
