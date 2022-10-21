@@ -105,9 +105,9 @@ document.addEventListener("keydown", (event) => {
       }
       break;
     case "w":
-      //if (gameArea.frames > 250) {
-      zePovinho.moveUp();
-      //}
+      if (gameArea.frames > 250) {
+        zePovinho.moveUp();
+      }
       break;
   }
 });

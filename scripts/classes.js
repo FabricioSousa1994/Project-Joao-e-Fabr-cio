@@ -90,7 +90,7 @@ class Car {
     this.image.src = this.obstaclesRight[this.random]; // Get a image randomly
     context.drawImage(this.image, this.x, this.y, this.width, this.height);
   }
-  newPosition() {
+  newPositionRight() {
     this.x += this.speedX;
   }
   drawLeft() {
@@ -114,6 +114,7 @@ class Car {
   }
 }
 
+// Costa class (win)
 class Costa {
   constructor(x, y, image) {
     this.x = x;
@@ -125,18 +126,5 @@ class Costa {
 
   draw() {
     context.drawImage(this.image, this.x, this.y, 75, 50);
-  }
-
-  left() {
-    return this.x;
-  }
-  right() {
-    return this.x + this.width;
-  }
-  top() {
-    return this.y;
-  }
-  bottom() {
-    return this.y + this.height;
   }
 }

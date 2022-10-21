@@ -18,7 +18,7 @@ function updateGameArea() {
   gameArea.clear();
   carsRight.forEach((car) => {
     car.draw();
-    car.newPosition();
+    car.newPositionRight();
   });
   carsLeft.forEach((car) => {
     car.drawLeft();
@@ -28,7 +28,7 @@ function updateGameArea() {
   costa.draw();
   checkGameOver();
   gameArea.score();
-  checkWin();
+  checkWin();  
 }
 
 function checkGameOver() {
