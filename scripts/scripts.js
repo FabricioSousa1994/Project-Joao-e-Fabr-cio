@@ -15,6 +15,7 @@ function isAudioPlaying() {
     audioIsPlaying = true;
   }
 }
+const crash = new Audio("sound/crash.mp3");
 
 let interval;
 let gameIsOver = false;
@@ -40,14 +41,14 @@ const gameArea = {
 
 // Create all cars
 const insertCars = () => {
-  const car1 = new Car(0, 705, 100, 40);
+  const car1 = new Car(-180, 705, 100, 40);
   const car2 = new Car(-100, 578, 100, 40);
-  const car3 = new Car(-210, 545, 100, 40);
-  const car4 = new Car(-320, 510, 100, 40);
-  const car5 = new Car(-680, 470, 100, 40);
+  const car3 = new Car(-380, 545, 100, 40);
+  const car4 = new Car(-550, 510, 100, 40);
+  const car5 = new Car(-780, 470, 100, 40);
   const car6 = new Car(-10, 355, 100, 40);
   const car7 = new Car(-250, 287, 100, 40);
-  const car8 = new Car(-550, 250, 100, 40);
+  const car8 = new Car(-1150, 250, 100, 40);
   const car9 = new Car(-950, 320, 100, 40);
   const car10 = new Car(800, 140, 100, 40);
   const car11 = new Car(1000, 180, 100, 40);
@@ -76,10 +77,8 @@ imageCosta.src = "images/antonio-costa.png";
 
 const costa = new Costa(400, 35, imageCosta);
 
-
 // Create the character
 const zePovinho = new Char(230, 755, image);
-
 
 // Add movement to character
 document.addEventListener("keydown", (event) => {

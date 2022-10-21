@@ -29,7 +29,6 @@ function updateGameArea() {
   checkGameOver();
   gameArea.score();
   checkWin();
-
 }
 
 function checkGameOver() {
@@ -48,11 +47,15 @@ function checkGameOver() {
 
   if (crashed || crashed2) {
     audio.pause();
+    crash.play();
     gameIsOver = true;
     gameArea.stop();
-    /* gameArea.clear();
+    gameArea.clear();
     context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-    context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight); */
+    context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    context.font = "50px Silkscreen";
+    context.fillStyle = "black";
+    context.fillText("R.I.P ZÉ POVINHO", 50, 400);
   }
 }
 

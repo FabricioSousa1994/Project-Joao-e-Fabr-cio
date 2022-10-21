@@ -6,12 +6,12 @@ class Char {
   constructor(x, y, image) {
     this.x = x;
     this.y = y;
-    this.height = 50;
-    this.width = 30;
+    this.height = 25;
+    this.width = 25;
     this.image = image;
   }
   draw() {
-    context.drawImage(this.image, this.x, this.y, 50, 30);
+    context.drawImage(this.image, this.x, this.y, 25, 25);
   }
   moveUp() {
     this.y -= 13;
@@ -69,7 +69,7 @@ class Car {
       "./images/carsRight/truck.png",
       "./images/carsRight/whatcolorcar.png",
     ];
-    
+
     // Cars from right to left
     this.obstaclesLeft = [
       "./images/carsLeft/bluecar.png",
@@ -85,7 +85,7 @@ class Car {
     ];
     this.random = parseInt(Math.random() * (0 + this.obstaclesRight.length)); //obstaclesRight and left has the same lenght
   }
-  
+
   draw() {
     this.image.src = this.obstaclesRight[this.random]; // Get a image randomly
     context.drawImage(this.image, this.x, this.y, this.width, this.height);
