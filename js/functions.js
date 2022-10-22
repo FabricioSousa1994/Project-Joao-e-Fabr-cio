@@ -16,7 +16,7 @@ function checkGameOver() {
 
   if (crashed || crashed2) {
     gameArea.gameIsOver = true;
-    gameArea.stop();
+    gameArea.stop();   
     crash.play();
     setTimeout(() => {
       document.getElementById("menu").style.display = "flex";
@@ -32,7 +32,7 @@ function checkWin() {
     context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
     context.font = "50px Silkscreen";
     context.fillStyle = "black";
-    context.fillText("dkosadjas", 50, 400);
+    context.fillText("SOMETHING", 50, 400);
     //}, 750);
   }
 }

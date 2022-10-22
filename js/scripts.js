@@ -20,6 +20,7 @@ document.getElementById("instructions").onclick = () => {
   document.getElementById("instructions").style.display = "none";
 };
 
+
 // Create all cars
 const insertCars = () => {
   const car1 = new Car(-110, 705, 100, 40);
