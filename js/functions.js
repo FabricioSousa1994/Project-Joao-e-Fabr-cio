@@ -48,8 +48,8 @@ function checkGameOver() {
   });
 
   if (crashed || crashed2) {
-    audio.pause();
-    crash.play();
+   // audio.pause();
+    //crash.play();
     gameArea.gameIsOver = true;
     gameArea.stop();
     gameArea.clear();
@@ -66,11 +66,13 @@ function checkWin() {
   if (zePovinho.y <= 60) {
     counter = 125;
     if ((counter = 125)) {
-      context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-      context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-      context.font = "50px Silkscreen";
-      context.fillStyle = "black";
-      context.fillText("dkosadjas", 50, 400);
+      //setTimeout(() => {
+        context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+        context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+        context.font = "50px Silkscreen";
+        context.fillStyle = "black";
+        context.fillText("dkosadjas", 50, 400);
+      //}, 750);
     }
   }
 }
