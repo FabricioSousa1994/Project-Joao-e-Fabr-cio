@@ -114,7 +114,7 @@ class Car {
   }
 }
 
-// Costa class (win)
+// Costa class
 class Costa {
   constructor(x, y, image) {
     this.x = x;

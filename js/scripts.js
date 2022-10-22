@@ -1,16 +1,24 @@
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
-const audio = document.querySelector("audio");
 
-audio.play();
+// Music on/off
+const music = new Audio("sound/music.mp3");
+
 let audioIsPlaying = true;
+document.getElementById("onOff").onclick = () => {
+  if (audioIsPlaying === true) {
+    music.pause();
+    audioIsPlaying = false;
+  } else {
+    music.play();
+    audioIsPlaying = true;
+  }
+};
 
 // Hide instructions
 document.getElementById("instructions").onclick = () => {
   document.getElementById("instructions").style.display = "none";
 };
-
-const crash = new Audio("sound/crash.mp3");
 
 // Create all cars
 const insertCars = () => {
@@ -82,9 +90,11 @@ document.addEventListener("keydown", (event) => {
       }
       break;
     case "w":
-      // if (gameArea.frames > 250) {
-      zePovinho.moveUp();
-      //}
+      if (gameArea.frames < 250) {
+        zePovinho.speedY = 0;
+      } else {
+        zePovinho.moveUp();
+      }
       break;
 
     case "A":
@@ -109,9 +119,11 @@ document.addEventListener("keydown", (event) => {
       }
       break;
     case "W":
-      // if (gameArea.frames > 250) {
-      zePovinho.moveUp();
-      //}
+      if (gameArea.frames <= 250) {
+        zePovinho.speedY = 0;
+      } else {
+        zePovinho.moveUp();
+      }
       break;
   }
 });

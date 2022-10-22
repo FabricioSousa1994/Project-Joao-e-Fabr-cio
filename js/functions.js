@@ -1,15 +1,6 @@
-// Music on/off
-function isAudioPlaying() {
-  if (audioIsPlaying === true) {
-    audio.pause();
-    audioIsPlaying = false;
-  } else {
-    audio.play();
-    audioIsPlaying = true;
-  }
-}
-
+// Collision check
 function checkGameOver() {
+  const crash = new Audio("sound/crash.mp3")
   const crashed = carsRight.some((car) => {
     if (zePovinho.collisionWithObstacle(car)) {
       return true;
@@ -24,12 +15,12 @@ function checkGameOver() {
   });
 
   if (crashed || crashed2) {
-    // audio.pause();
-    //crash.play();
     gameArea.gameIsOver = true;
     gameArea.stop();
-    gameArea.clear();
-    document.getElementById("menu").style.display = "flex";
+    crash.play();
+    setTimeout(() => {
+      document.getElementById("menu").style.display = "flex";
+    }, 3000);
   }
 }
 
@@ -45,28 +36,6 @@ function checkWin() {
     //}, 750);
   }
 }
-
-function updateGameArea() {
-  if (!gameArea.gameIsOver) {
-    insertCars();
-    gameArea.frames++;
-    gameArea.clear();
-    carsRight.forEach((car) => {
-      car.drawRight();
-      car.newPositionRight();
-    });
-    carsLeft.forEach((car) => {
-      car.drawLeft();
-      car.newPositionLeft();
-    });
-    zePovinho.draw();
-    costa.draw();
-    checkGameOver();
-    gameArea.score();
-    checkWin();
-  }
-}
-
 
 let interval;
 let counter = 0;
@@ -89,3 +58,25 @@ const gameArea = {
     context.fillText(`Score: ${counter},00€`, 20, 30);
   },
 };
+
+function updateGameArea() {
+  if (!gameArea.gameIsOver) {
+    insertCars();
+    gameArea.frames++;
+    gameArea.clear();
+    carsRight.forEach((car) => {
+      car.drawRight();
+      car.newPositionRight();
+    });
+    carsLeft.forEach((car) => {
+      car.drawLeft();
+      car.newPositionLeft();
+    });
+    zePovinho.draw();
+    costa.draw();
+    checkGameOver();
+    gameArea.score();
+    checkWin();
+    console.log(gameArea.frames);
+  }
+}
