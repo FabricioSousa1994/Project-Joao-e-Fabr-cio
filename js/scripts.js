@@ -18,11 +18,11 @@ function isAudioPlaying() {
 const crash = new Audio("sound/crash.mp3");
 
 let interval;
-let gameIsOver = false;
 let counter = 0;
 
 const gameArea = {
   frames: 0,
+  gameIsOver: false,
   start: () => {
     interval = setInterval(updateGameArea, 20);
   },
@@ -41,10 +41,10 @@ const gameArea = {
 
 // Create all cars
 const insertCars = () => {
-  const car1 = new Car(-180, 705, 100, 40);
-  const car2 = new Car(-100, 578, 100, 40);
-  const car3 = new Car(-380, 545, 100, 40);
-  const car4 = new Car(-550, 510, 100, 40);
+  const car1 = new Car(100, 705, 100, 40);
+  const car2 = new Car(80, 578, 100, 40);
+  const car3 = new Car(180, 545, 100, 40);
+  const car4 = new Car(250, 510, 100, 40);
   const car5 = new Car(-780, 470, 100, 40);
   const car6 = new Car(-10, 355, 100, 40);
   const car7 = new Car(-250, 287, 100, 40);
@@ -52,10 +52,10 @@ const insertCars = () => {
   const car9 = new Car(-950, 320, 100, 40);
   const car10 = new Car(800, 140, 100, 40);
   const car11 = new Car(1000, 180, 100, 40);
-  const car12 = new Car(3000, 140, 100, 40);
-  const car13 = new Car(2000, 216, 100, 40);
-  const car14 = new Car(3000, 216, 100, 40);
-  const car15 = new Car(4000, 102, 100, 40);
+  const car12 = new Car(300, 140, 100, 40);
+  const car13 = new Car(200, 216, 100, 40);
+  const car14 = new Car(300, 216, 100, 40);
+  const car15 = new Car(400, 102, 100, 40);
 
   if (gameArea.frames % 140 === 0) {
     carsRight.push(car1, car2, car3, car4, car5, car6, car7, car8, car9);
@@ -67,7 +67,11 @@ window.onload = () => {
   image.src = "images/char.png";
   document.getElementById("startGame").onclick = () => {
     document.getElementById("menu").style.display = "none";
+    gameArea.gameIsOver = false;
     gameArea.start();
+    zePovinho.y = 755;
+    zePovinho.x = 230;
+    zePovinho.draw()
   };
 };
 
@@ -105,9 +109,9 @@ document.addEventListener("keydown", (event) => {
       }
       break;
     case "w":
-      if (gameArea.frames > 250) {
+     // if (gameArea.frames > 250) {
         zePovinho.moveUp();
-      }
+      //}
       break;
   }
 });
