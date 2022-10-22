@@ -54,16 +54,11 @@ function checkGameOver() {
     gameArea.stop();
     gameArea.clear();
     document.getElementById("menu").style.display = "flex";
-    /* context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-    context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-    context.font = "50px Silkscreen";
-    context.fillStyle = "black";
-    context.fillText("R.I.P ZÉ POVINHO", 50, 400); */
   }
 }
 
 function checkWin() {
-  if (zePovinho.y <= 60) {
+  if (zePovinho.y <= 70) {
     counter = 125;
     if ((counter = 125)) {
       //setTimeout(() => {

@@ -67,6 +67,7 @@ body {
 #onOff {
     background-color: transparent;
     border: 0px;
+    cursor: pointer;
 }
 
 #muteLogo,
@@ -135,3 +136,4 @@ p {
     margin-top: 60px;
     animation: animate 1s infinite;
 }
+

@@ -71,7 +71,7 @@ window.onload = () => {
     gameArea.start();
     zePovinho.y = 755;
     zePovinho.x = 230;
-    zePovinho.draw()
+    zePovinho.draw();
   };
 };
 
@@ -87,6 +87,7 @@ const zePovinho = new Char(230, 755, image);
 // Add movement to character
 document.addEventListener("keydown", (event) => {
   switch (event.key) {
+    //W A S D move
     case "a":
       if (zePovinho.x <= 10) {
         zePovinho.speedX = 0;
@@ -109,8 +110,35 @@ document.addEventListener("keydown", (event) => {
       }
       break;
     case "w":
-     // if (gameArea.frames > 250) {
-        zePovinho.moveUp();
+      // if (gameArea.frames > 250) {
+      zePovinho.moveUp();
+      //}
+      break;
+
+    case "A":
+      if (zePovinho.x <= 10) {
+        zePovinho.speedX = 0;
+      } else {
+        zePovinho.moveLeft();
+      }
+      break;
+    case "D":
+      if (zePovinho.x >= 565) {
+        zePovinho.speedX = 0;
+      } else {
+        zePovinho.moveRight();
+      }
+      break;
+    case "S":
+      if (zePovinho.y >= 750) {
+        zePovinho.speedX = 0;
+      } else {
+        zePovinho.moveDown();
+      }
+      break;
+    case "W":
+      // if (gameArea.frames > 250) {
+      zePovinho.moveUp();
       //}
       break;
   }
