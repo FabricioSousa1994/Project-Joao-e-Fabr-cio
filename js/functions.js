@@ -31,7 +31,6 @@ function updateGameArea() {
     gameArea.score();
     checkWin();
   }
-
 }
 
 function checkGameOver() {
@@ -48,16 +47,13 @@ function checkGameOver() {
     return false;
   });
 
-
   if (crashed || crashed2) {
     audio.pause();
     crash.play();
     gameArea.gameIsOver = true;
     gameArea.stop();
     gameArea.clear();
-    
     document.getElementById("menu").style.display = "flex";
-
     /* context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
     context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
     context.font = "50px Silkscreen";
@@ -69,7 +65,7 @@ function checkGameOver() {
 function checkWin() {
   if (zePovinho.y <= 60) {
     counter = 125;
-    if (counter = 125) {
+    if ((counter = 125)) {
       context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
       context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
       context.font = "50px Silkscreen";
@@ -77,5 +73,4 @@ function checkWin() {
       context.fillText("dkosadjas", 50, 400);
     }
   }
-
 }

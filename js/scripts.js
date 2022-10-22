@@ -41,21 +41,21 @@ const gameArea = {
 
 // Create all cars
 const insertCars = () => {
-  const car1 = new Car(100, 705, 100, 40);
-  const car2 = new Car(80, 578, 100, 40);
-  const car3 = new Car(180, 545, 100, 40);
-  const car4 = new Car(250, 510, 100, 40);
+  const car1 = new Car(-110, 705, 100, 40);
+  const car2 = new Car(-90, 578, 100, 40);
+  const car3 = new Car(-180, 545, 100, 40);
+  const car4 = new Car(-450, 510, 100, 40);
   const car5 = new Car(-780, 470, 100, 40);
   const car6 = new Car(-10, 355, 100, 40);
   const car7 = new Car(-250, 287, 100, 40);
-  const car8 = new Car(-1150, 250, 100, 40);
+  const car8 = new Car(-1200, 250, 100, 40);
   const car9 = new Car(-950, 320, 100, 40);
   const car10 = new Car(800, 140, 100, 40);
-  const car11 = new Car(1000, 180, 100, 40);
-  const car12 = new Car(300, 140, 100, 40);
-  const car13 = new Car(200, 216, 100, 40);
-  const car14 = new Car(300, 216, 100, 40);
-  const car15 = new Car(400, 102, 100, 40);
+  const car11 = new Car(1150, 180, 100, 40);
+  const car12 = new Car(2500, 8000, 100, 40);
+  const car13 = new Car(950, 216, 100, 40);
+  const car14 = new Car(1100, 80000, 100, 40);
+  const car15 = new Car(900, 102, 100, 40);
 
   if (gameArea.frames % 140 === 0) {
     carsRight.push(car1, car2, car3, car4, car5, car6, car7, car8, car9);
