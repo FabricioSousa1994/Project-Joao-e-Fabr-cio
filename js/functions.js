@@ -1,3 +1,4 @@
+// Music on/off
 function isAudioPlaying() {
   if (audioIsPlaying === true) {
     audio.pause();
@@ -5,31 +6,6 @@ function isAudioPlaying() {
   } else {
     audio.play();
     audioIsPlaying = true;
-  }
-}
-
-document.getElementById("instructions").onclick = () => {
-  document.getElementById("instructions").style.display = "none";
-};
-
-function updateGameArea() {
-  if (!gameArea.gameIsOver) {
-    insertCars();
-    gameArea.frames++;
-    gameArea.clear();
-    carsRight.forEach((car) => {
-      car.draw();
-      car.newPositionRight();
-    });
-    carsLeft.forEach((car) => {
-      car.drawLeft();
-      car.newPositionLeft();
-    });
-    zePovinho.draw();
-    costa.draw();
-    checkGameOver();
-    gameArea.score();
-    checkWin();
   }
 }
 
@@ -48,7 +24,7 @@ function checkGameOver() {
   });
 
   if (crashed || crashed2) {
-   // audio.pause();
+    // audio.pause();
     //crash.play();
     gameArea.gameIsOver = true;
     gameArea.stop();
@@ -60,14 +36,56 @@ function checkGameOver() {
 function checkWin() {
   if (zePovinho.y <= 70) {
     counter = 125;
-    if ((counter = 125)) {
-      //setTimeout(() => {
-        context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-        context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-        context.font = "50px Silkscreen";
-        context.fillStyle = "black";
-        context.fillText("dkosadjas", 50, 400);
-      //}, 750);
-    }
+    //setTimeout(() => {
+    context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    context.font = "50px Silkscreen";
+    context.fillStyle = "black";
+    context.fillText("dkosadjas", 50, 400);
+    //}, 750);
   }
 }
+
+function updateGameArea() {
+  if (!gameArea.gameIsOver) {
+    insertCars();
+    gameArea.frames++;
+    gameArea.clear();
+    carsRight.forEach((car) => {
+      car.drawRight();
+      car.newPositionRight();
+    });
+    carsLeft.forEach((car) => {
+      car.drawLeft();
+      car.newPositionLeft();
+    });
+    zePovinho.draw();
+    costa.draw();
+    checkGameOver();
+    gameArea.score();
+    checkWin();
+  }
+}
+
+
+let interval;
+let counter = 0;
+
+const gameArea = {
+  frames: 0,
+  gameIsOver: false,
+  start: () => {
+    interval = setInterval(updateGameArea, 20);
+  },
+  stop: () => {
+    clearInterval(interval);
+  },
+  clear: () => {
+    context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+  },
+  score: () => {
+    context.font = "15px Silkscreen";
+    context.fillStyle = "white";
+    context.fillText(`Score: ${counter},00€`, 20, 30);
+  },
+};

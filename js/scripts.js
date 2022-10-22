@@ -5,39 +5,12 @@ const audio = document.querySelector("audio");
 audio.play();
 let audioIsPlaying = true;
 
-// Music on/off
-function isAudioPlaying() {
-  if (audioIsPlaying === true) {
-    audio.pause();
-    audioIsPlaying = false;
-  } else {
-    audio.play();
-    audioIsPlaying = true;
-  }
-}
-const crash = new Audio("sound/crash.mp3");
-
-let interval;
-let counter = 0;
-
-const gameArea = {
-  frames: 0,
-  gameIsOver: false,
-  start: () => {
-    interval = setInterval(updateGameArea, 20);
-  },
-  stop: () => {
-    clearInterval(interval);
-  },
-  clear: () => {
-    context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-  },
-  score: () => {
-    context.font = "15px Silkscreen";
-    context.fillStyle = "white";
-    context.fillText(`Score: ${counter},00€`, 20, 30);
-  },
+// Hide instructions
+document.getElementById("instructions").onclick = () => {
+  document.getElementById("instructions").style.display = "none";
 };
+
+const crash = new Audio("sound/crash.mp3");
 
 // Create all cars
 const insertCars = () => {
@@ -87,7 +60,6 @@ const zePovinho = new Char(230, 755, image);
 // Add movement to character
 document.addEventListener("keydown", (event) => {
   switch (event.key) {
-    //W A S D move
     case "a":
       if (zePovinho.x <= 10) {
         zePovinho.speedX = 0;

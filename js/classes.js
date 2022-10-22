@@ -86,7 +86,7 @@ class Car {
     this.random = parseInt(Math.random() * (0 + this.obstaclesRight.length)); //obstaclesRight and left has the same lenght
   }
 
-  draw() {
+  drawRight() {
     this.image.src = this.obstaclesRight[this.random]; // Get a image randomly
     context.drawImage(this.image, this.x, this.y, this.width, this.height);
   }
