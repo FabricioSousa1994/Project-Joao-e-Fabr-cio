@@ -140,13 +140,6 @@ p {
 
 #count {
     position: absolute;
-    width: 601;
-    height: 801;
 }
 
-#counting {
-    font-size: 100px;
-    color: white;
-    animation: animate 1s infinite;
-}
 

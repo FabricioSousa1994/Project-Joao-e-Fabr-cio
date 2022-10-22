@@ -1,6 +1,6 @@
 // Collision check
 function checkGameOver() {
-  const crash = new Audio("sound/crash.mp3")
+  const crash = new Audio("sound/crash.mp3");
   const crashed = carsRight.some((car) => {
     if (zePovinho.collisionWithObstacle(car)) {
       return true;
@@ -16,7 +16,7 @@ function checkGameOver() {
 
   if (crashed || crashed2) {
     gameArea.gameIsOver = true;
-    gameArea.stop();   
+    gameArea.stop();
     crash.play();
     setTimeout(() => {
       document.getElementById("menu").style.display = "flex";
@@ -32,9 +32,22 @@ function checkWin() {
     context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
     context.font = "50px Silkscreen";
     context.fillStyle = "black";
-    context.fillText("SOMETHING", 50, 400);
+    context.fillText("SOMETHING", 85, 400);
     //}, 750);
   }
+}
+
+const countImg = document.createElement("img");
+countImg.src = "images/count.gif";
+const img = [];
+
+// Countdown
+function counting() {
+  img.push(countImg);
+  document.getElementById("count").appendChild(img[0]);
+  setTimeout(() => {
+    document.getElementById("count").style.display = "none";
+  }, 3000);
 }
 
 let interval;

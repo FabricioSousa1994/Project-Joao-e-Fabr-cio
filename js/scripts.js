@@ -20,7 +20,6 @@ document.getElementById("instructions").onclick = () => {
   document.getElementById("instructions").style.display = "none";
 };
 
-
 // Create all cars
 const insertCars = () => {
   const car1 = new Car(-110, 705, 100, 40);
@@ -49,6 +48,7 @@ window.onload = () => {
   image.src = "images/char.png";
   document.getElementById("startGame").onclick = () => {
     document.getElementById("menu").style.display = "none";
+    counting();
     gameArea.gameIsOver = false;
     gameArea.start();
     zePovinho.y = 755;
@@ -91,7 +91,7 @@ document.addEventListener("keydown", (event) => {
       }
       break;
     case "w":
-      if (gameArea.frames < 250) {
+      if (gameArea.frames < 150) {
         zePovinho.speedY = 0;
       } else {
         zePovinho.moveUp();
@@ -120,7 +120,7 @@ document.addEventListener("keydown", (event) => {
       }
       break;
     case "W":
-      if (gameArea.frames <= 250) {
+      if (gameArea.frames <= 150) {
         zePovinho.speedY = 0;
       } else {
         zePovinho.moveUp();
@@ -128,3 +128,6 @@ document.addEventListener("keydown", (event) => {
       break;
   }
 });
+
+
+
