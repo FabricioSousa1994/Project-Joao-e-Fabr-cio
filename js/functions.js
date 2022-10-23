@@ -23,28 +23,24 @@ function checkGameOver() {
     }, 3000);
   }
 }
-
 function checkWin() {
+  const costaImage = new Image();
+  costaImage.src = "images/costa.jpg";
   if (zePovinho.y <= 70) {
     counter = 125;
-    //setTimeout(() => {
-    context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-    context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-    const finalImage = new Image()
-    finalImage.src = "images/costa.jpg"
-    context.drawImage(finalImage, 0, 0, 600, 500);
-    context.font = "20px Silkscreen";
-    context.fillStyle = "black";
-    context.fillText("PARABÉNS!!!", 250, 550);
-    context.fillText("Ganhas-te teu extraórdinario apoio de 125€!", 0, 600);
-    context.fillText("Vá, agora não gastes isso tudo!!", 0, 650);
     setTimeout(() => {
-      document.getElementById("menu").style.display = "flex";
-    }, 5000); 
+      gameArea.stop();
+      context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+      context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+      context.drawImage(costaImage, 0, 0, canvas.clientWidth, canvas.clientHeight);
+      context.font = "20px Silkscreen";
+      context.fillStyle = "black";
+      setTimeout(() => {
+        document.getElementById("menu").style.display = "flex";
+      }, 5000);
+    }, 1000);
   }
-  }
-
-
+}
 
 const countImg = document.createElement("img");
 countImg.src = "images/count.gif";
