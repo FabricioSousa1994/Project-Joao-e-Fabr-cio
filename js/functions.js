@@ -30,12 +30,21 @@ function checkWin() {
     //setTimeout(() => {
     context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
     context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-    context.font = "50px Silkscreen";
+    const finalImage = new Image()
+    finalImage.src = "images/costa.jpg"
+    context.drawImage(finalImage, 0, 0, 600, 500);
+    context.font = "20px Silkscreen";
     context.fillStyle = "black";
-    context.fillText("SOMETHING", 85, 400);
-    //}, 750);
+    context.fillText("PARABÉNS!!!", 0, 550);
+    context.fillText("Ganhas-te teu extraórdinario apoio de 125€!", 0, 600);
+    context.fillText("Vá, agora não gastes isso tudo!!", 0, 650);
+    setTimeout(() => {
+      document.getElementById("menu").style.display = "flex";
+    }, 5000); 
   }
-}
+  }
+
+
 
 const countImg = document.createElement("img");
 countImg.src = "images/count.gif";
