@@ -97,7 +97,7 @@ document.addEventListener("keydown", (event) => {
         zePovinho.moveUp();
       }
       break;
-
+e
     case "A":
       if (zePovinho.x <= 10) {
         zePovinho.speedX = 0;

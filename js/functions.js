@@ -90,6 +90,5 @@ function updateGameArea() {
     checkGameOver();
     gameArea.score();
     checkWin();
-    console.log(gameArea.frames);
   }
 }
