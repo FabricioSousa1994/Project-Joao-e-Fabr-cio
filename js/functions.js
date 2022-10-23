@@ -35,7 +35,7 @@ function checkWin() {
     context.drawImage(finalImage, 0, 0, 600, 500);
     context.font = "20px Silkscreen";
     context.fillStyle = "black";
-    context.fillText("PARABÉNS!!!", 0, 550);
+    context.fillText("PARABÉNS!!!", 250, 550);
     context.fillText("Ganhas-te teu extraórdinario apoio de 125€!", 0, 600);
     context.fillText("Vá, agora não gastes isso tudo!!", 0, 650);
     setTimeout(() => {
