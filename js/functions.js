@@ -23,6 +23,7 @@ function checkGameOver() {
     }, 3000);
   }
 }
+
 function checkWin() {
   const costaImage = new Image();
   costaImage.src = "images/costa.jpg";
@@ -32,10 +33,17 @@ function checkWin() {
       gameArea.stop();
       context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
       context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-      context.drawImage(costaImage, 0, 0, canvas.clientWidth, canvas.clientHeight);
+      context.drawImage(
+        costaImage,
+        0,
+        0,
+        canvas.clientWidth,
+        canvas.clientHeight
+      );
       context.font = "20px Silkscreen";
       context.fillStyle = "black";
       setTimeout(() => {
+        counter = 0;
         document.getElementById("menu").style.display = "flex";
       }, 5000);
     }, 1000);
