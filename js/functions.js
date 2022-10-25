@@ -40,8 +40,7 @@ function checkWin() {
         canvas.clientWidth,
         canvas.clientHeight
       );
-      context.font = "20px Silkscreen";
-      context.fillStyle = "black";
+      winMusic.play()
       setTimeout(() => {
         counter = 0;
         document.getElementById("menu").style.display = "flex";

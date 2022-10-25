@@ -3,6 +3,7 @@ const context = canvas.getContext("2d");
 
 // Music on/off
 const music = new Audio("sound/music.mp3");
+const winMusic = new Audio ("sound/money.mp3")
 
 let audioIsPlaying = true;
 document.getElementById("onOff").onclick = () => {
