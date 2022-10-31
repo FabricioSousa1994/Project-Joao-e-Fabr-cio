@@ -27,9 +27,11 @@ function checkGameOver() {
 function checkWin() {
   const costaImage = new Image();
   costaImage.src = "images/costa.jpg";
-  if (zePovinho.y <= 70) {
-    counter = 125;
-    setTimeout(() => {
+  if (zePovinho.y <= -11) {
+    zePovinho.y = 780;
+    counter += 50;
+  }
+  /* setTimeout(() => {
       gameArea.stop();
       context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
       context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
@@ -45,8 +47,7 @@ function checkWin() {
         counter = 0;
         document.getElementById("menu").style.display = "flex";
       }, 5000);
-    }, 1000);
-  }
+    }, 1000); */
 }
 
 const countImg = document.createElement("img");

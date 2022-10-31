@@ -6,18 +6,18 @@ class Char {
   constructor(x, y, image) {
     this.x = x;
     this.y = y;
-    this.height = 25;
-    this.width = 25;
+    this.height = 18;
+    this.width = 18;
     this.image = image;
   }
   draw() {
     context.drawImage(this.image, this.x, this.y, 25, 25);
   }
   moveUp() {
-    this.y -= 13;
+    this.y -= 10;
   }
   moveDown() {
-    this.y += 13;
+    this.y += 10;
   }
   moveLeft() {
     this.x -= 20;
@@ -56,7 +56,12 @@ class Car {
     this.height = height;
     this.image = new Image();
     this.speedX = 2.8;
-
+    if (counter === 50) {
+      this.speedX = 3.3;
+    }
+    if (counter === 100) {
+      this.speedX = 4.5;
+    }
     // Cars from left to right
     this.obstaclesRight = [
       "./images/carsRight/bluecar.png",
